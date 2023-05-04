@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Speech-to-Text Demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>Speech-to-Text Demo</h1>
+
+<form action="/" method="post">
+    <textarea id="transcription" name="transcription" rows="10" cols="50"></textarea>
+    <br>
+    <button id="start-button" type="button">Start Recording</button>
+    <button id="stop-button" type="button">Stop Recording</button>
+    <button id="submit-button" type="submit" style="display:none;">Submit</button>
+</form>
+
+<script>
+    let recognition;
+    let isRecording = false;
+
+    function startRecognition() {
+        if (!recognition) {
+            // Create a new instance of SpeechRecognition
+            recognition = new webkitSpeechRecognition();
+
+            // Set the language to English (US)
+            recognition.lang = 'en-US';
+
+            // Continuously transcribe speech to text in real-time
+            recognition.onresult = function (event) {
+                const transcript = event.results[event.results.length - 1][0].transcript;
+                const textarea = document.getElementById('transcription');
+                textarea.value += transcript;
+            }
+
+            // Add an event listener for the end event
+            recognition.addEventListener('end', function () {
+                // Restart the recognition instance
+                recognition.start();
+            });
+        }
+
+        // Start the recognition
+        recognition.start();
+
+        isRecording = true;
+        document.getElementById('start-button').setAttribute('disabled', 'disabled');
+        document.getElementById('stop-button').removeAttribute('disabled');
+        document.getElementById('submit-button').style.display = 'none';
+    }
+
+
+    function stopRecognition() {
+        // Stop the recognition
+        recognition.stop();
+
+        isRecording = false;
+        document.getElementById('start-button').removeAttribute('disabled');
+        document.getElementById('stop-button').setAttribute('disabled', 'disabled');
+        document.getElementById('submit-button').style.display = 'inline-block';
+    }
+
+    const startButton = document.getElementById('start-button');
+    const stopButton = document.getElementById('stop-button');
+
+    startButton.addEventListener('click', startRecognition);
+    stopButton.addEventListener('click', stopRecognition);
+</script>
+</body>
+</html>

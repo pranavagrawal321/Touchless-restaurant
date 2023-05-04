@@ -1,0 +1,113 @@
+{"intents":
+[
+            {
+             "tag":"greetings",
+             "patterns": ["hello","hey","hi","good day","greetings","what's up?","how is it going","how are you?"],
+             "responses":["hello","hey!","what can i do for you?", "I am fine", "I am doing fine"]
+            },
+            {
+             "tag":"goodbye",
+             "patterns": ["cya","see you later","goodbye","have a good day","bye","cao","see ya"],
+             "responses":["have a nice day","goodbye"]
+            },
+            {
+             "tag":"age",
+             "patterns": ["how old","how old are you?","what is your age","how old are you","age?"],
+             "responses":["I get reborn after every compilation","hey!","my owners are averagely 20 years!"]
+            },
+            {
+             "tag":"name",
+             "patterns": ["what is your name","what should i call you","what's your name?","who are you?","can you tell me your name"],
+             "responses":["you can call me Medbot!","i am Medbot!","i am Medbot your medical assistant"]
+            },
+            {
+             "tag":"Pizza",
+             "patterns": ["I want to order Margherita pizza","Margherita pizza",
+             "I want to order Double Cheese Margherita pizza","Double Cheese Margherita pizza",
+             "I want to order onion pizza","onion pizza",
+             "I want to order Farm House pizza","Farm House pizza", "I'd like to order Margherita pizza", "I'd like to order Double Cheese Margherita pizza", "I'd like to order onion pizza", "I'd like to order Farm House pizza"],
+             "responses":["Great choice! Would you like to add any sides or drinks?",
+             "Excellent! That comes with garlic knots, would you like to add any other sides?",
+             "Sure thing! Do you want to add any drinks or sides?",
+             "Good choice! Would you like to add any sides or drinks to your order?",
+             "The BBQ chicken pizza with a Caesar salad sounds delicious! Would you like any drinks or sides with that?",
+             "Absolutely! Would you like to add any sides or drinks to your order?",
+             "Of course, which pizza would you like to order?",
+             "Sure, we have a variety of sides to choose from. Which one would you like to add to your order?",
+             "Sure, we can make that pizza without onions for you. Would you like to add any sides or drinks to your order?"]
+            },
+            {
+             "tag":"Burger",
+             "patterns":["I want to order Veg Whopper burger",
+             "I want to order Chicken Whopper burger",
+             "I want to order Crispy Veg burger", 
+            "I'd like to order the cheeseburger", "I'd like to order Veg Whopper burger", "I'd like to order Chicken Whopper burger", "I'd like to order Crispy Veg burger", "I'd like to order the cheeseburger"],
+             "responses":["Great choice! Would you like to add any sides or drinks?",
+             "Excellent! That comes with fries, would you like to add any other sides?",
+             "Sure thing! Do you want to add any drinks or sides?",
+             "Good choice! Would you like to add any sides or drinks to your order?",
+             "The spicy chicken burger with onion rings sounds delicious! Would you like any drinks or sides with that?",
+             "Absolutely! Would you like to add any sides or drinks to your order?",
+             "Of course, which burger would you like to order?",
+             "Sure, we have a variety of sides to choose from. Which one would you like to add to your order?",
+             "Sure, we can make that burger without onions for you. Would you like to add any sides or drinks to your order?"]
+            },
+
+            {
+                "tag":"Soft Drinks",
+                "patterns":["I'd like a Coke, please", "I'd like to order Sprite", "I want to order Sprite", "I want to order Pepsi", "I'd like to order Pepsi", "I want to order Coke", "I'd like to order Coke", "I want to order Diet Coke", "I'd like to order Diet Coke", "I want to order Diet Pepsi", "I'd like to order Diet Pepsi", "I want to order Diet Sprite", "I'd like to order Diet Sprite", "I want to order Diet Coke", "I'd like to order Diet Coke", "I want to order Diet Pepsi", "I'd like to order Diet Pepsi", "I want to order Diet Sprite", "I'd like to order Diet Sprite", "I want to order Diet Coke", "I'd like to order Diet Coke", "I want to order Diet Pepsi", "I'd like to order Diet Pepsi", "I want to order Diet Sprite", "I'd like to order Diet Sprite", "I want to order Diet Coke", "I'd like to order Diet Coke", "I want to order Diet Pepsi", "I'd like to order Diet Pepsi", "I want to order Diet Sprite", "I'd like to order Diet Sprite", "Pepsi", "Sprite", "Coke", "Diet Pepsi", "Diet Sprite", "Diet Coke"],
+                "responses":["Great choice! Would you like to add any food items to your order?",
+                "Excellent! That goes great with our burgers. Would you like to add any food items?",
+                "Sure thing! Do you want to add any food items to your order?",
+                "Good choice! Would you like to add any food items to your order?",
+                "The root beer is a great choice! Would you like to add any food items?",
+                "Absolutely! Would you like to add any food items to your order?",
+                "Of course, which soft drink would you like to order?",
+                "Sure, we have a variety of sides to choose from. Which one would you like to add to your order?",
+                "Sure, we can make your Coke without ice for you. Would you like to add any food items to your order?"]
+               },
+
+               {
+                "tag":"Fries",
+                "patterns":[ "I'd like some French fries, please",
+                "Fries",
+                "Can I have French fries with my meal?",
+                "I'll have a side of French fries",
+                "I want some French fries",
+                "I'd like to order some French fries",
+                "Can I get a large order of fries?",
+                "Can I get a small order of fries?",
+                "Can I get a medium order of fries?",
+                "I want to order some crispy French fries"],
+                "responses":["Great choice! Would you like to add any other food items to your order?",
+                "Excellent! That goes great with our burgers. Would you like to add any other food items?",
+                "Sure thing! Do you want to add any other food items to your order?",
+                "Good choice! Would you like to add any other food items to your order?",
+                "The French fries are a great choice! Would you like to add any other food items?",
+                "Certainly, would you like anything else with your French fries?",
+                "Of course, what size would you like for your French fries?"]
+               },
+               {
+                "tag":"Samosa",
+                "patterns":["I'd like a samosa, please",
+                "Can I have a samosa with my meal?",
+                "I'll have a samosa",
+                "Samosa",
+                "I want a samosa",
+                "I'd like to order a samosa",
+                "Can I get a samosa for here?",
+                "Can I get a samosa to go?",
+                "Can I get a samosa and a drink?",
+                "I want a vegetarian samosa"],
+                "responses":["Great choice! Would you like to add any other food items to your order?",
+                "Excellent! That goes great with our beverages. Would you like to add any other food items?",
+                "Sure thing! Do you want to add any other food items to your order?",
+                "Good choice! Would you like to add any other food items to your order?",
+                "The samosa is a great choice! Would you like to add any other food items?",
+                "Certainly, would you like anything else with your samosa?",
+                "Of course, would you like your samosa for here or to go?",
+                "Sure, which drink would you like with your samosa?",
+                "Absolutely! We have a delicious vegetarian samosa option. Would you like to add anything else to your order?"
+              ]
+               }
+]}
