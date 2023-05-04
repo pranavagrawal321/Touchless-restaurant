@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text to Speech Demo</title>
+</head>
+<body>
+<h1>Text to Speech Demo</h1>
+<p>Type some text and click the button to hear it spoken out loud:</p>
+<textarea id="text-to-speak" rows="5" cols="50"></textarea>
+<br>
+<button id="speak-button" type="button">Speak</button>
+<script>
+    const speakButton = document.getElementById('speak-button');
+    const textToSpeak = document.getElementById('text-to-speak');
+    const synth = window.speechSynthesis;
+
+    // Check if the browser supports the Speech Synthesis API
+    if ('speechSynthesis' in window) {
+        speakButton.addEventListener('click', () => {
+            const text = textToSpeak.value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            synth.speak(utterance);
+        });
+    } else {
+        // Speech Synthesis API not supported
+        alert("Sorry, your browser doesn't support the Speech Synthesis API.");
+    }
+</script>
+</body>
+</html>
