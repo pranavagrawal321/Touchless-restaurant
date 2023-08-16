@@ -10,7 +10,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
     <nav class="navbar">
         <div class="navbar-container container">
@@ -37,6 +36,54 @@
             <p>Eat Healty, it is good for our health.</p>
             <a href="#food-menu" class="btn btn-primary">Menu</a>
         </div>
+    </section>
+    
+    <section class="recording" id="record">
+        <div> 
+            <button class="btn" id="recordButton">Start recording</button>
+            <div id="textBox"></div>
+            <script>
+                const transcriptBox = document.getElementById("textBox");
+                const recordButton = document.getElementById("recordButton");
+            
+                window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            
+                const recognition = new SpeechRecognition();
+                recognition.interimResults = true;
+            
+                let isRecording = false;
+            
+                recordButton.addEventListener("click", toggleRecording);
+            
+                function toggleRecording() {
+                    if (!isRecording) {
+                        startRecording();
+                        recordButton.textContent = "Stop Recording";
+                    } else {
+                        stopRecording();
+                        recordButton.textContent = "Start Recording";
+                    }
+                    isRecording = !isRecording;
+                }
+            
+                function startRecording() {
+                    recognition.start();
+                }
+            
+                function stopRecording() {
+                    recognition.stop();
+                }
+            
+                recognition.addEventListener("result", (e) => {
+                    const text = Array.from(e.results)
+                        .map((result) => result[0])
+                        .map((result) => result.transcript)
+                        .join("");
+            
+                    transcriptBox.textContent = text + " "; 
+                });
+            </script>
+            </div>
     </section>
 
     <section id="about">
