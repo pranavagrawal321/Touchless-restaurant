@@ -28,17 +28,17 @@ def get_response(msg):
     X = bag_of_words(sentence, all_words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X).to(device)
-
+    
     output = model(X)
     _, predicted = torch.max(output, dim=1)
-
+    
     tag = tags[predicted.item()]
-
+    
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    if(prob.item() > 0.5):
-        for intent in intents['intents'] :
-            if(tag == intent["tag"]):
+    if prob.item() > 0.5:
+        for intent in intents['intents']:
+            if tag == intent["tag"]:
                 return random.choice(intent['responses'])
-
+    
     return "I don't understand"
